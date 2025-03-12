@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MauiFreehandDrawing.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <Grid RowDefinitions="*, Auto, Auto">
+        <Border>
+            <GraphicsView
+                x:Name="_graphicsView"
+                BackgroundColor="White"
+                DragInteraction="_graphicsView_DragInteraction"
+                EndInteraction="_graphicsView_EndInteraction"
+                HorizontalOptions="Fill"
+                StartInteraction="_graphicsView_StartInteraction"
+                VerticalOptions="Fill" />
+        </Border>
+        <Button
+            x:Name="_saveBtn"
+            Grid.Row="1"
+            Clicked="_saveBtn_Clicked"
+            HorizontalOptions="Center"
+            Text="Save" />
+        <Image
+            x:Name="_img"
+            Grid.Row="2"
+            HeightRequest="200"
+            HorizontalOptions="Center"
+            IsVisible="False"
+            WidthRequest="200" />
+    </Grid>
+</ContentPage>
