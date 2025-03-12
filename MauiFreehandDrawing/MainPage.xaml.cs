@@ -49,7 +49,7 @@
             var directoryPath = Path.Combine(FileSystem.AppDataDirectory, "drawings");
             Directory.CreateDirectory(directoryPath);
 
-            var fullPath = Path.Combine(directoryPath, "freehand.png");
+            var fullPath = Path.Combine(directoryPath, $"freehand_{Guid.NewGuid()}.png");
 
             using var fs = File.Create(fullPath);
             
@@ -57,6 +57,14 @@
 
             _img.Source = fullPath;
             _img.IsVisible = true;
+        }
+
+        private void ToolbarItem_Clicked(object sender, EventArgs e)
+        {
+            _img.Source = null;
+            _img.IsVisible = false;
+            _freehandDrawable.Reset();
+            _graphicsView.Invalidate();
         }
     }
 

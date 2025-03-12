@@ -86,4 +86,9 @@ internal class FreehandDrawable : IDrawable
             canvas.DrawPath(path);
         }
     }
+
+    public void Reset()
+    {
+        _strokes.Clear();
+    }
 }

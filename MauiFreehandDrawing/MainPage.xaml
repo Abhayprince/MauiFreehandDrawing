@@ -2,9 +2,17 @@
 <ContentPage
     x:Class="MauiFreehandDrawing.MainPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
-    <Grid RowDefinitions="*, Auto, Auto">
-        <Border>
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Freehand Drawing">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Reset" Clicked="ToolbarItem_Clicked" />
+    </ContentPage.ToolbarItems>
+    <Grid
+        Padding="15"
+        BackgroundColor="LightGray"
+        RowDefinitions="*, Auto, Auto"
+        RowSpacing="5">
+        <Border BackgroundColor="White">
             <GraphicsView
                 x:Name="_graphicsView"
                 BackgroundColor="White"
